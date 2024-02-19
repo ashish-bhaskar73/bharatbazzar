@@ -3,7 +3,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import HelpIcon from "@mui/icons-material/Help";
 import paymentMethods from "../../../assets/images/payment-methods.svg";
 import { useLocation } from "react-router-dom";
-import logo from "../../../../src/assets/images/logo1.jpeg"
+import logo from "../../../../src/assets/images/logo3.jpeg"
 
 const footerLinks = [
   {
@@ -95,7 +95,7 @@ const Footer = () => {
     <>
       {!adminRoute && (
         <>
-          <footer className="mt-20 w-full py-1 sm:py-4 px-4 sm:px-12 bg-green-600 text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden">
+          <footer className="mt-20 w-full py-1 sm:py-4 px-4 sm:px-12 bg-green-400 text-white text-xs border-b border-gray-600 flex flex-col sm:flex-row overflow-hidden">
             <div className="w-full sm:w-7/12 flex flex-col sm:flex-row">
               {footerLinks.map((el, i) => (
                 <div

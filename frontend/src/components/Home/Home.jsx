@@ -27,7 +27,7 @@ const Home = () => {
     <>
       <MetaData title="Bharat Bazzar. Best Offers!" />
       <Categories />
-      <main className="flex flex-col bg-grey-200 gap-3 px-2 mt-16 sm:mt-2">
+      <main className="flex flex-col bg-white-200 gap-3 px-2 mt-16 sm:mt-2">
         <Banner />
         <DealSlider title={"Discounts for You"} />
         {!loading && <ProductSlider title={"Suggested for You"} tagline={"Based on Your Activity"} />}

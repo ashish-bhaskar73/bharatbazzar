@@ -108,13 +108,13 @@ export const offerProducts = [
   },
   {
     image: photo14,
-    name: "Sofa Sets",
+    name: "Sneakers",
     offer: "Min 50% Off",
     tag: "Great Savings!",
   },
   {
     image: photo15,
-    name: "Data Cards",
+    name: "Nike Sports",
     offer: "Upto 60% Off",
     tag: "Buy Now!",
   },
@@ -128,7 +128,7 @@ export const offerProducts = [
     {
       image:
         photo17,
-      name: "Philips Inductions",
+      name: "Sports Sneaker",
       offer: "Upto 55% Off",
       tag: "Top Rated",
     },

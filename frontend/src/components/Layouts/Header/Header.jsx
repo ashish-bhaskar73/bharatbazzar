@@ -2,7 +2,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Searchbar from "./Searchbar";
-import logo from "../../../assets/images/logo1.jpeg";
+import logo from "/home/ashish/Desktop/demo/bharatbazzar/frontend/src/assets/images/logo3-removebg-preview.png";
 import PrimaryDropDownMenu from "./PrimaryDropDownMenu";
 import SecondaryDropDownMenu from "./SecondaryDropDownMenu";
 // import CategoryDropDownMenu from "./CategoryDropDownMenu";
@@ -29,10 +29,10 @@ const Header = () => {
     <header className="bg-green-400 fixed top-0 py-2.5 w-full z-10">
       <div className="w-full h-10 sm:w-9/12 px-1 sm:px-4 m-auto flex justify-between items-center relative">
         <div className="flex items-center h-20 flex-1">
-          <Link className="h-full mr-4 sm:mr-4" to="/">
+          <Link className="h-full  w-10% mr-2 sm:mr-4 custom-link-margin"  to="/">
             <img
               draggable="false"
-              className="h-full w-200 object-contain"
+              className="h-full w-full object-contain"
               src={logo}
               alt="bharatbazzar Logo"
             />
