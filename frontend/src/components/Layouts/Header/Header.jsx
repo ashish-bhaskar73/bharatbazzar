@@ -45,21 +45,6 @@ const Header = () => {
           onMouseLeave={handleMouseLeave} // Close dropdown when mouse leaves
         >
           <div className="flex items-center justify-between ml-1 sm:ml-0 gap-0.5 sm:gap-7 relative">
-            {/* <div
-              className="categoryDropDown flex items-center text-white font-medium gap-1 cursor-pointer"
-              onMouseEnter={() => setToggleCategoryDropDown(true)} // Open category dropdown on mouse enter
-            >
-              Categories
-              <span>
-                {toggleCategoryDropDown ? (
-                  <ExpandLessIcon sx={{ fontSize: "16px" }} />
-                ) : (
-                  <ExpandMoreIcon sx={{ fontSize: "16px" }} />
-                )}
-              </span>
-            </div>
-
-            {toggleCategoryDropDown && <CategoryDropDownMenu />} */}
 
             {isAuthenticated === false ? (
               <Link
