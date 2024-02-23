@@ -1,14 +1,13 @@
-const express = require('express');
-const { processPayment, paytmResponse, getPaymentStatus } = require('../controllers/paymentController');
-const { isAuthenticatedUser } = require('../middlewares/auth');
+const express = require("express");
+const { createOrder } = require("../controllers/paymentController.js");
+const { payOrder } = require("../controllers/paymentController.js");
+const { paymentResponse } = require("../controllers/paymentController.js");
 
 const router = express.Router();
-
-router.route('/payment/process').post(processPayment);
-// router.route('/stripeapikey').get(isAuthenticatedUser, sendStripeApiKey);
-
-router.route('/callback').post(paytmResponse);
-
-router.route('/payment/status/:id').get(isAuthenticatedUser, getPaymentStatus);
-
+router.get("/get-razorpay-key", (req, res) => {
+  res.send({ key: process.env.RAZORPAY_KEY_ID });
+});
+router.post("/create-order", createOrder);
+router.post("/pay-order", payOrder);
+router.get("/pay-res", paymentResponse);
 module.exports = router;

@@ -14,7 +14,6 @@ import {
   getProductDetails,
   updateProduct,
 } from "../../actions/productAction";
-import ImageIcon from "@mui/icons-material/Image";
 import BackdropLoader from "../Layouts/BackdropLoader";
 import { categories } from "../../utils/constants";
 import MetaData from "../Layouts/MetaData";
@@ -340,34 +339,6 @@ const UpdateProduct = () => {
               ))}
             </div>
           </div>
-
-          {/* <h2 className="font-medium">Brand Details</h2>
-                    <div className="flex justify-between gap-4 items-start">
-                        <TextField
-                            label="Brand"
-                            type="text"
-                            variant="outlined"
-                            size="small"
-                            required
-                            value={brand}
-                            onChange={(e) => setBrand(e.target.value)}
-                        /> */}
-          {/* <div className="w-24 h-10 flex items-center justify-center border rounded-lg">
-                            {!logoPreview ? <ImageIcon /> :
-                                <img draggable="false" src={logoPreview} alt="Brand Logo" className="w-full h-full object-contain" />
-                            }
-                        </div> */}
-          {/* <label className="rounded font-medium bg-gray-400 text-center cursor-pointer text-white py-2 px-2.5 shadow hover:shadow-lg">
-                            <input
-                                type="file"
-                                name="logo"
-                                accept="image/*"
-                                onChange={handleLogoChange}
-                                className="hidden"
-                            />
-                            Choose Logo
-                        </label> */}
-          {/* </div> */}
         </div>
 
         <div className="flex flex-col gap-2 m-2 sm:w-1/2">

@@ -37,6 +37,7 @@ import UpdateUser from "./components/Admin/UpdateUser";
 import ReviewsTable from "./components/Admin/ReviewsTable";
 import Wishlist from "./components/Wishlist/Wishlist";
 import NotFound from "./components/NotFound";
+// import ContactUsPage from "./components/Layouts/ContactUsPage.jsx";
 
 function App() {
   const dispatch = useDispatch();
@@ -299,6 +300,7 @@ function App() {
             </ProtectedRoute>
           }
         ></Route>
+        {/* <Route path="/contact-us" element={<ContactUsPage />} /> */}
 
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

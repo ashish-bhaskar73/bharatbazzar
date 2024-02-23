@@ -93,7 +93,7 @@ const PrimaryDropDownMenu = ({ setTogglePrimaryDropDown, user }) => {
               <Link
                 className="pl-3 py-3.5 border-b flex gap-3 items-center hover:bg-gray-50"
                 to={redirect}
-                key={i}
+                key={title}
               >
                 <span className="text-primary-blue">{icon}</span>
                 {title}

@@ -3,7 +3,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import HelpIcon from "@mui/icons-material/Help";
 import paymentMethods from "../../../assets/images/payment-methods.svg";
 import { useLocation } from "react-router-dom";
-import logo from "../../../../src/assets/images/logo3.jpeg"
+import logo from "../../../../src/assets/images/logo3.jpeg";
 
 const footerLinks = [
   {
@@ -11,17 +11,12 @@ const footerLinks = [
     links: [
       {
         name: "Contact Us",
-        redirect: "https://www.bharatbazzar.com/helpcentre",
+        redirect: "/Contact-us",
       },
       {
         name: "About Us",
         redirect: "https://www.bharatbazzar.com/about-us",
       },
-      // {
-      //   name: "Careers",
-      //   redirect: "https://www.bharatbazzarcareers.com",
-      // },
-
       {
         name: "Bharat Wholesale",
         redirect: "https://www.bharatbazzarwholesale.com",
@@ -102,9 +97,7 @@ const Footer = () => {
                   className="w-full sm:w-1/5 flex flex-col gap-2 my-3 sm:my-6 ml-5"
                   key={i}
                 >
-                  <h2 className="text-black mb-2 uppercase">
-                    {el.title}
-                  </h2>
+                  <h2 className="text-black mb-2 uppercase">{el.title}</h2>
                   {el.links.map((item, i) => (
                     <a
                       href={item.redirect}
@@ -131,7 +124,9 @@ const Footer = () => {
               </div>
 
               <div className="w-full sm:w-1/2">
-                <img src={logo} alt="bharatbazzar"></img>{/* logo appear here */}</div>
+                <img src={logo} alt="bharatbazzar"></img>
+                {/* logo appear here */}
+              </div>
             </div>
           </footer>
           {/* <!-- footer ends --> */}
@@ -148,12 +143,7 @@ const Footer = () => {
               </span>{" "}
               Sell On Bharat Bazzar
             </a>
-            {/* <a href="https://brands.bharatbazzar.com" target="_blank" rel="noreferrer" className="flex items-center gap-2">
-              <span className="text-yellow-400"><StarsIcon sx={{ fontSize: "20px" }} /></span> Advertise
-            </a> */}
-            {/* <a href="https://www.bharatbazzar.com/the-gift-card-store" rel="noreferrer" target="_blank" className="flex items-center gap-2">
-              <span className="text-yellow-400"><CardGiftcardIcon sx={{ fontSize: "20px" }} /></span> Gift Cards
-            </a> */}
+
             <a
               href=""
               target="_blank"
