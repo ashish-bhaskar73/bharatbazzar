@@ -5,11 +5,16 @@ import PriceSidebar from "./PriceSidebar";
 import Stepper from "./Stepper";
 import { clearErrors } from "../../actions/orderAction";
 import { useSnackbar } from "notistack";
-import { post } from "../../utils/razorpayForm"; // Import your Razorpay form submission function
+import { post } from "../../utils/paytmForm";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 import MetaData from "../Layouts/MetaData";
 
 const Payment = () => {
   const dispatch = useDispatch();
+  // const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
   const [payDisable, setPayDisable] = useState(false);
@@ -29,30 +34,41 @@ const Payment = () => {
     phoneNo: shippingInfo.phoneNo,
   };
 
+  // const order = {
+  //     shippingInfo,
+  //     orderItems: cartItems,
+  //     totalPrice,
+  // }
+
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    // paymentBtn.current.disabled = true;
     setPayDisable(true);
 
     try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
       const { data } = await axios.post(
         "/api/v1/payment/process",
         paymentData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        config
       );
 
       let info = {
-        action: "Razorpay endpoint URL", // Replace with your Razorpay endpoint URL
-        params: data.razorpayParams, // Make sure your backend sends the required Razorpay parameters
+        action: "https://securegw-stage.paytm.in/order/process",
+        params: data.paytmParams,
       };
 
-      post(info); // Submit the Razorpay form
+      post(info);
     } catch (error) {
+      // paymentBtn.current.disabled = false;
       setPayDisable(false);
-      enqueueSnackbar(error.message, { variant: "error" });
+      enqueueSnackbar(error, { variant: "error" });
     }
   };
 
@@ -65,10 +81,12 @@ const Payment = () => {
 
   return (
     <>
-      <MetaData title="bharatbazzar: Secure Payment | Razorpay" />
+      <MetaData title="Bharat Bazzar: Secure Payment | Paytm" />
 
       <main className="w-full mt-20">
+        {/* <!-- row --> */}
         <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-11/12 mt-0 sm:mt-4 m-auto sm:mb-7">
+          {/* <!-- cart column --> */}
           <div className="flex-1">
             <Stepper activeStep={3}>
               <div className="w-full bg-white">
@@ -77,10 +95,34 @@ const Payment = () => {
                   autoComplete="off"
                   className="flex flex-col justify-start gap-2 w-full mx-8 my-4 overflow-hidden"
                 >
+                  <FormControl>
+                    <RadioGroup
+                      aria-labelledby="payment-radio-group"
+                      defaultValue="paytm"
+                      name="payment-radio-button"
+                    >
+                      <FormControlLabel
+                        value="paytm"
+                        control={<Radio />}
+                        label={
+                          <div className="flex items-center gap-4">
+                            <img
+                              draggable="false"
+                              className="h-6 w-6 object-contain"
+                              src="https://rukminim1.flixcart.com/www/96/96/promos/01/09/2020/a07396d4-0543-4b19-8406-b9fcbf5fd735.png"
+                              alt="Paytm Logo"
+                            />
+                            <span>Paytm</span>
+                          </div>
+                        }
+                      />
+                    </RadioGroup>
+                  </FormControl>
+
                   <input
                     type="submit"
                     value={`Pay ₹${totalPrice.toLocaleString()}`}
-                    disabled={payDisable}
+                    disabled={payDisable ? true : false}
                     className={`${
                       payDisable
                         ? "bg-primary-grey cursor-not-allowed"
@@ -91,6 +133,7 @@ const Payment = () => {
               </div>
             </Stepper>
           </div>
+
           <PriceSidebar cartItems={cartItems} />
         </div>
       </main>

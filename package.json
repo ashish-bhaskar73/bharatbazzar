@@ -26,6 +26,7 @@
     "mailgun-js": "^0.22.0",
     "mongoose": "^6.1.7",
     "nodemailer": "^6.7.2",
+    "paytmchecksum": "^1.5.1",
     "razorpay": "^2.9.2",
     "stripe": "^8.200.0",
     "uuid": "^8.3.2",
